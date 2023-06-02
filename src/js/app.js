@@ -29,18 +29,78 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  // NOMBRES Y APELLIDO
+
+  if (variables.name == null) {
+    variables.name = "Pepito";
+  }
+  if (variables.lastname == null) {
+    variables.lastname = "Perez";
+  }
+
+  // ROL
+
+  if (
+    variables.role != "Web Developer" &&
+    variables.role != "Floor Planner" &&
+    variables.role != "Technical Writter"
+  ) {
+    variables.role = "Agente Secreto";
+  }
+
+  // CITY
+
+  if (
+    variables.city != "Miami" &&
+    variables.city != "Munich" &&
+    variables.city != "Caracas" &&
+    variables.city != "Toronto"
+  ) {
+    variables.city = "Sion";
+  }
+
+  // PAIS
+
+  if (
+    variables.country != "USA" &&
+    variables.country != "Germany" &&
+    variables.country != "Canada" &&
+    variables.country != "Venezuela"
+  ) {
+    variables.country = "Matrix";
+  }
+
+  // SOCIAL MEDIA
+
+  if (variables.twitter == null) {
+    variables.twitter = "rickastley/status/1534138167598645248?lang=es";
+  }
+
+  if (variables.github == null) {
+    variables.github = "topics/rick-astley";
+  }
+
+  if (variables.linkedin == null) {
+    variables.linkedin =
+      "pub/dir/Rick/Astley?original_referer=https%3A%2F%2Fwww.google.com%2F";
+  }
+
+  if (variables.instagram == null) {
+    variables.instagram = "officialrickastley/?hl=es";
+  }
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${variables.name} ${variables.lastname}</h1>
+          <h2>${variables.role}</h2>
+          <h3>${variables.city}, ${variables.country}</h3>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
