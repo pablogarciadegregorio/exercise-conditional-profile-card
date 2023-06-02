@@ -32,10 +32,10 @@ function render(variables = {}) {
   // NOMBRES Y APELLIDO
 
   if (variables.name == null) {
-    variables.name = "Pepito";
+    variables.name = "Rick";
   }
   if (variables.lastname == null) {
-    variables.lastname = "Perez";
+    variables.lastname = "Astley";
   }
 
   // ROL
@@ -45,7 +45,7 @@ function render(variables = {}) {
     variables.role != "Floor Planner" &&
     variables.role != "Technical Writter"
   ) {
-    variables.role = "Agente Secreto";
+    variables.role = "Professional Rickroller";
   }
 
   // CITY
@@ -56,7 +56,7 @@ function render(variables = {}) {
     variables.city != "Caracas" &&
     variables.city != "Toronto"
   ) {
-    variables.city = "Sion";
+    variables.city = "Newton-le-Willows";
   }
 
   // PAIS
@@ -67,7 +67,7 @@ function render(variables = {}) {
     variables.country != "Canada" &&
     variables.country != "Venezuela"
   ) {
-    variables.country = "Matrix";
+    variables.country = "Lancashire";
   }
 
   // SOCIAL MEDIA
@@ -114,14 +114,15 @@ window.onload = function() {
     // if includeCover is true the algorithm should
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background: "https://i.kym-cdn.com/photos/images/newsfeed/002/136/427/925",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://assets.onlinepianist.com/songs/artists/rick_astley_bg.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
