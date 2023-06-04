@@ -70,23 +70,51 @@ function render(variables = {}) {
     variables.country = "Lancashire";
   }
 
-  // SOCIAL MEDIA
+  // SOCIAL MEDIA //
 
-  if (variables.twitter == null) {
+  // DECLARACION DE COLOR DE ICONOS//
+  let twitterID = "red";
+  let githubID = "red";
+  let linkedinID = "red";
+  let instagramID = "red";
+
+  if (
+    variables.twitter == null ||
+    variables.twitter == "rickastley/status/1534138167598645248?lang=es"
+  ) {
     variables.twitter = "rickastley/status/1534138167598645248?lang=es";
+    twitterID = "red";
+  } else {
+    twitterID = "white";
   }
 
-  if (variables.github == null) {
+  if (variables.github == null || variables.github == "topics/rick-astley") {
     variables.github = "topics/rick-astley";
+    githubID = "red";
+  } else {
+    githubID = "white";
   }
 
-  if (variables.linkedin == null) {
+  if (
+    variables.linkedin == null ||
+    variables.linkedin ==
+      "pub/dir/Rick/Astley?original_referer=https%3A%2F%2Fwww.google.com%2F"
+  ) {
     variables.linkedin =
       "pub/dir/Rick/Astley?original_referer=https%3A%2F%2Fwww.google.com%2F";
+    linkedinID = "red";
+  } else {
+    linkedinID = "white";
   }
 
-  if (variables.instagram == null) {
+  if (
+    variables.instagram == null ||
+    variables.instagram == "officialrickastley/?hl=es"
+  ) {
     variables.instagram = "officialrickastley/?hl=es";
+    instagramID = "red";
+  } else {
+    instagramID = "white";
   }
 
   // reset the website body with the new html output
@@ -97,10 +125,10 @@ function render(variables = {}) {
           <h2>${variables.role}</h2>
           <h3>${variables.city}, ${variables.country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter ${twitterID} "></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github ${githubID}"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin ${linkedinID}"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram ${instagramID}"></i></a></li>
           </ul>
         </div>
     `;
