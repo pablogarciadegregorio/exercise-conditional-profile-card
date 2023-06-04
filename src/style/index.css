@@ -101,10 +101,19 @@
   border-radius: 0 0 3px 0;
 }
 
+/* COLOR DE LOS ICONOS DE RRSS */
+
 .red {
   color: red;
 }
 
 .white {
   color: white;
+}
+
+.widget .fa-file-arrow-up {
+  position: absolute;
+  right: 180px;
+  top: 100px;
+  color: crimson;
 }
