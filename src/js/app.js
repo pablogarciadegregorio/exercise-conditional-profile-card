@@ -119,33 +119,37 @@ function render(variables = {}) {
   }
 
   // CAMBIO DE FONDO DE COVER
+  function coverChange() {
+    if (variables.backgroundMode == null) {
+      variables.background =
+        "https://i.kym-cdn.com/photos/images/newsfeed/002/136/427/925";
+    }
 
-  if (variables.backgroundMode == "hacker") {
-    variables.background =
-      "https://static.vecteezy.com/system/resources/thumbnails/002/418/715/original/abstract-binary-code-background-free-video.jpg";
-  }
-  if (variables.backgroundMode == "paradise") {
-    variables.background =
-      "https://cache.desktopnexus.com/thumbseg/1410/1410592-bigthumbnail.jpg";
-  }
+    if (variables.backgroundMode == "hacker") {
+      variables.background =
+        "https://static.vecteezy.com/system/resources/thumbnails/002/418/715/original/abstract-binary-code-background-free-video.jpg";
+    }
 
-  if (variables.backgroundMode == "programmer") {
-    variables.background =
-      "https://cf.geekdo-images.com/CIKgHoaMKmO2S9jdfNoBiw__large/img/odFDSg92kXiC9Kk-92p7D6IEAP0=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic6759303.jpg";
+    if (variables.backgroundMode == "paradise") {
+      variables.background =
+        "https://cache.desktopnexus.com/thumbseg/1410/1410592-bigthumbnail.jpg";
+    }
+
+    if (variables.backgroundMode == "programmer") {
+      variables.background =
+        "https://cf.geekdo-images.com/CIKgHoaMKmO2S9jdfNoBiw__large/img/odFDSg92kXiC9Kk-92p7D6IEAP0=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic6759303.jpg";
+    }
   }
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
-          <div>
           <img src="${variables.avatarURL}" class="photo" />
-          <a><i class="fa-solid fa-file-arrow-up"></i></a>
-          </div>
           <h1>${variables.name} ${variables.lastname}</h1>
           <h2>${variables.role}</h2>
           <h3>${variables.city}, ${variables.country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter ${twitterID} "></i></a></li>
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter ${twitterID}"></i></a></li>
             <li><a href="https://github.com/${variables.github}"><i class="fab fa-github ${githubID}"></i></a></li>
             <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin ${linkedinID}"></i></a></li>
             <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram ${instagramID}"></i></a></li>

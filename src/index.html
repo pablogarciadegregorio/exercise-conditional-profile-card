@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Conditional Profile Card</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
@@ -91,13 +91,36 @@
       <!-- PARTE OPCIONAL -->
       <li>
         <label>Cover Theme</label>
-        <select class="picker" for="backgroundMode">
+        <select onChange="coverChange()" class="picker" for="backgroundMode">
+          <!-- /* onchange="Coverchange()" */ -->
           <option value="hacker">Hacker</option>
           <option value="paradise">Paradise </option>
           <option value="programmer">Programmer</option>
         </select>
       </li>
+
+      <!-- UPLOAD IMAGE -->
+      <li>
+        <label>Select Image</label>
+        <input
+          class="picker"
+          for="avatarURL"
+          type="file"
+          accept="image/png, image/jpeg"
+        />
+      </li>
+
+      <li>
+        <label>URL Image</label>
+        <input
+          class="picker"
+          for="avatarURL"
+          type="url"
+          placeholder="https://"
+        />
+      </li>
     </ul>
+
     <div id="widget_content"></div>
 
     <!-- do not remove this bundle.js tag -->
